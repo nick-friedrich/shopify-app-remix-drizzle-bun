@@ -2,10 +2,6 @@
 
 This is a template for building a [Shopify app](https://shopify.dev/docs/apps/getting-started) using the [Remix](https://remix.run) framework.
 
-Rather than cloning this repo, you can use your preferred package manager and the Shopify CLI with [these steps](https://shopify.dev/docs/apps/getting-started/create).
-
-Visit the [`shopify.dev` documentation](https://shopify.dev/docs/api/shopify-app-remix) for more details on the Remix app package.
-
 ## Quick start
 
 ### Prerequisites
@@ -40,7 +36,7 @@ bun install
 Finally, run the database migrations:
 
 ```shell
-bun run setup
+bun run dk:migrate
 ```
 
 ### Local Development
@@ -48,6 +44,7 @@ bun run setup
 ```shell
 bun run dev
 ```
+INFO: Bun runtimes isn't supported we're still starting the dev server via npx. See shopify.web.toml file.
 
 Press P to open the URL to your app. Once you click install, you can start development.
 
