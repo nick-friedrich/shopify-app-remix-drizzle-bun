@@ -1,11 +1,11 @@
 {
-  "id": "549df422-ed69-4ea4-8920-388eb326e2cf",
+  "id": "9eae6800-a483-4646-b56f-3ae246db8e5d",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
-    "public.sessions": {
-      "name": "sessions",
+    "public.session": {
+      "name": "session",
       "schema": "",
       "columns": {
         "id": {
@@ -49,13 +49,13 @@
           "name": "accessToken",
           "type": "text",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         },
         "userId": {
           "name": "userId",
-          "type": "bigserial",
+          "type": "bigint",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
         }
       },
       "indexes": {},

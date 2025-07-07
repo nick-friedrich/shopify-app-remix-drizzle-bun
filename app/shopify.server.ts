@@ -4,8 +4,9 @@ import {
   AppDistribution,
   shopifyApp,
 } from "@shopify/shopify-app-remix/server";
-import { DrizzleSessionStorage } from "@shopify/shopify-app-session-storage-drizzle";
-import { db, sessions } from "./db.server";
+import { DrizzleSessionStoragePostgres } from "@shopify/shopify-app-session-storage-drizzle";
+import { db } from "./db/db.server";
+import { sessionTable } from "./db/schema.server";
 
 const shopify = shopifyApp({
   apiKey: process.env.SHOPIFY_API_KEY,
@@ -14,7 +15,7 @@ const shopify = shopifyApp({
   scopes: process.env.SCOPES?.split(","),
   appUrl: process.env.SHOPIFY_APP_URL || "",
   authPathPrefix: "/auth",
-  sessionStorage: new DrizzleSessionStorage(db, sessions),
+  sessionStorage: new DrizzleSessionStoragePostgres(db, sessionTable),
   distribution: AppDistribution.AppStore,
   future: {
     unstable_newEmbeddedAuthStrategy: true,

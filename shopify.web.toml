@@ -3,4 +3,4 @@ roles = ["frontend", "backend"]
 webhooks_path = "/webhooks/app/uninstalled"
 
 [commands]
-dev = "bun run drizzle-kit migrate && bun exec remix vite:dev"
+dev = "npx drizzle-kit migrate && npx remix vite:dev"

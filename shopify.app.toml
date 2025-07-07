@@ -3,11 +3,12 @@
 client_id = "4ab1a4169c98ea9c430f48a204fff2ce"
 name = "rmb-test"
 handle = "rmb-test"
-application_url = "https://example.com/"
+application_url = "https://inns-distant-wherever-mention.trycloudflare.com"
 embedded = true
 
 [build]
 include_config_on_deploy = true
+automatically_update_urls_on_dev = true
 
 [webhooks]
 api_version = "2025-07"
@@ -25,7 +26,11 @@ api_version = "2025-07"
 scopes = "write_products"
 
 [auth]
-redirect_urls = [ "https://example.com/api/auth" ]
+redirect_urls = [
+  "https://inns-distant-wherever-mention.trycloudflare.com/auth/callback",
+  "https://inns-distant-wherever-mention.trycloudflare.com/auth/shopify/callback",
+  "https://inns-distant-wherever-mention.trycloudflare.com/api/auth/callback"
+]
 
 [pos]
 embedded = false
